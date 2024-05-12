@@ -58,7 +58,7 @@ h1{
     color: white;
     background-color: rgb(107, 107, 107);
 }
-#search-label{
+.search-label{
     font-family: monospace;
     font-size: 2rem;
     font-weight: 900;
@@ -85,6 +85,7 @@ h1{
     color: black;
     font-size: 1.5em;
     font-weight: 600;
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
     padding: 5px;
     flex-grow: 1;
 }
@@ -146,5 +147,6 @@ main{
     .superhero-card{
         width: 300px;
         margin: 10px;
+        flex-grow: 1;
     }
 }
