@@ -20,7 +20,7 @@ async function getCharacterList(){
 }
 
 function renderElement(list) {
-  heading.textContent = list[0].name;
+//   heading.textContent = list[0].name;
   img.src = list[0].thumbnail.path+'.'+list[0].thumbnail.extension;
 }
 getCharacterList();
