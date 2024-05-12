@@ -1,47 +1,47 @@
 body{
-    background-image: url('assets/images/marvel-bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: color;
-    background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: black;
     color: white;
     margin: 0;
     position: relative;
 }
 
 header{
-    top: 0;
-    position: sticky;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.8);
+    
+    color: black;
+    background-color: white;
+    background: url(assets/images/marvel-comic-books.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-attachment: fixed;
+    height: 60vh;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 40px 20px 20px 20px;
 }
 h1{
-    font-size: 3rem;
+    /* background-color: aqua; */
+    font-size: 3.5rem;
     text-align: center;
-    width: 30%;
-    margin: 0;
+    /* width: 30%; */
 }
 .search-box{
+    /* background-color: aquamarine; */
     display: flex;
     width: 65%;
     height: 50px;
-    flex-grow: 1;
 }
 #search{
     width: 90%;
     background-color: transparent;
+    /* background-color: bisque; */
     border-top: none;
     border-bottom: 2px solid grey;
     border-left: none;
     border-right: none;
-    color: white;
+    /* color: white; */
+    color: black;
     font-size: 1.5em;
     padding: 5px;
 }
@@ -51,12 +51,13 @@ h1{
 #search-button{
     width: 10%;
     background-color: transparent;
+    /* background-color: blue; */
     border-top: none;
     border-bottom: 2px solid gray;
     border-right: none;
     border-left: none;
-    color: grey;
-    font-size: 1.5em;
+    /* color: grey; */
+    font-size: 1em;
     cursor: pointer;
 }
 #search-button:active{
@@ -105,16 +106,6 @@ main{
 
 
 @media screen and (max-width: 920px) {
-    header{
-        flex-wrap: wrap;
-    }
-    h1{
-        width: 100%;
-    }
-    .search-box{
-        width: 100%;
-        margin-top: 10px;
-    }
     .superhero-card{
         width: 300px;
         margin: 10px;
