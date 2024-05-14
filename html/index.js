@@ -1,10 +1,5 @@
 let favouriteCharacters = [];
-// Creating a Hash
-const ts = ((new Date()).getTime()).toString();
-const privateKey = 'e99b92619caa0536ef5b1dfe483652a7361c94cc';
-const publicKey = '013197631fe0d1dff2d0fad660597495';
-const hash = CryptoJS.MD5(ts+privateKey+publicKey).toString();
-
+import { ts,publicKey,hash } from "../js/credential";
 // Navbar
 // Accessing navbar elements
 const heading = document.querySelector('.heading');
@@ -16,6 +11,7 @@ heading.addEventListener('click',()=>{
 
 favPageButton.addEventListener('click',()=>{
   window.location.href = 'favourites.html';
+  console.log(document.title);
 })
 
 // Home Page
@@ -42,7 +38,7 @@ async function defaultList(name){
       console.log(data.results);
       renderElement(data.results);
     } catch (error) {
-        console.log("Error in fetching",error);
+        console.log("Error in fetching characterList",error);
     }
 }
 
@@ -87,6 +83,19 @@ function addToFavourites(characterId,icon){
 }
 
 //Favourite Page
-function getCharacterById(id) {
-  
+async function getCharactersById(idArray) {
+  const characterArray = [];
+  for (const id of idArray) {
+    const url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+    try {
+      const response = await fetch(url);
+      const result = await response.json();
+      const data = await result.data;
+      console.log(data.results);
+      characterArray.concat(data.results);
+    } catch (error) {
+        console.log("Error in fetching character",error);
+    }
+  }
+  return characterArray;
 }
