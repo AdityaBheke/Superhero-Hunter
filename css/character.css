@@ -16,6 +16,7 @@ header{
     width: 30%;
     aspect-ratio: 1;
     border-radius: 10px;
+    border: 1px solid black;
 }
 
 .search-label{
@@ -26,12 +27,60 @@ header{
 
 main{
     color: black;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 #description{
-    width: 65%;
     text-align: justify;
     font-size: 1.5rem;
 }
+.info-container{
+    font-family: monospace;
+    width: 100%;
+    height: auto;
+}
+.info-type{
+    padding: 5px;
+    font-size: 2rem;
+    font-weight: 600;
+    display: block;
+}
+.card-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+}
+.info-card{
+    /* background-color: bisque; */
+    padding: 10px;
+    margin-right: 20px;
+    width: 200px;
+    min-width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.card-thumbnail{
+    width: 100%;
+    aspect-ratio: 0.75;
+    border: 1px solid black;
+}
+.card-name{
+    font-size: 1rem;
+    padding: 5px;
+    color: black;
+    text-align: center;
+}
+
+
 
 @media screen and (max-width: 920px) {
     header{

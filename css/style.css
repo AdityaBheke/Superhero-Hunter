@@ -163,6 +163,10 @@ main{
     .superhero-card{
         width: 300px;
         margin: 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .superhero-card{
         flex-grow: 1;
     }
 }
