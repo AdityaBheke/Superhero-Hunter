@@ -1,18 +1,7 @@
 import { ts, publicKey, hash } from "./credential.js";
+import {heading, favPageButton} from './navbar.js';
 let favouriteCharacters = [];
 
-// Navbar
-// Accessing navbar elements
-const heading = document.querySelector('.heading');
-const favPageButton = document.querySelector('nav .black-button'); 
-
-heading.addEventListener('click',()=>{
-  window.location.href = 'index.html';
-})
-
-favPageButton.addEventListener('click',()=>{
-  window.location.href = 'favourites.html';
-})
 
 // Home Page
 const searchInput = document.getElementById('search');
@@ -35,7 +24,7 @@ async function defaultList(name){
       const response = await fetch(url);
       const result = await response.json();
       const data = await result.data;
-      console.log(data.results);
+      console.log("Home page data",data.results);
       renderElement(data.results);
     } catch (error) {
         console.log("Error in fetching",error);
@@ -79,10 +68,6 @@ function addToFavourites(characterId,icon){
   }
 
   localStorage.setItem('favourites',JSON.stringify(favouriteCharacters));
+  console.log(JSON.parse(localStorage.getItem('favourites')));
   return iconHtml;
-}
-
-//Favourite Page
-function getCharacterById(id) {
-  
 }
