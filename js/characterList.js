@@ -31,18 +31,14 @@ function renderList(list) {
   }
 
   function addToFavourites(characterId,icon){
-    let iconHtml = '<i class="fa-regular fa-heart" aria-hidden="true"></i>';
-  
-    if (icon == '<i class="fa-regular fa-heart" aria-hidden="true"></i>') {
+    if (!favouriteCharacters.includes(characterId)) {
       favouriteCharacters.push(characterId);
-      iconHtml = '<i class="fa-solid fa-heart" aria-hidden="true"></i>';
     }else{
       favouriteCharacters = favouriteCharacters.filter((favouriteId)=>{return favouriteId != characterId});
     }
-  
     localStorage.setItem('favourites',JSON.stringify(favouriteCharacters));
     console.log(JSON.parse(localStorage.getItem('favourites')));
-    return iconHtml;
+    return isFavourite(characterId);
   }
 
   function isFavourite(id) {
