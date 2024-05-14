@@ -99,7 +99,9 @@ main{
         margin-top: 20px;
         font-size: 4rem
     }
-
+    main{
+        width: 80%;
+    }
     #description{
         width: 80%;
     }
@@ -112,6 +114,9 @@ main{
     .search-label{
         margin-top: 20px;
         font-size: 3rem
+    }
+    main{
+        width: 90%;
     }
     #description{
         width: 95%;

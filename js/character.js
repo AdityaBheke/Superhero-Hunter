@@ -40,7 +40,12 @@ async function getMoreDetails(uri,total,infoType) {
 function renderBasicDetails(character) {
     profileImage.src = character.thumbnail.path+'.'+character.thumbnail.extension;
     profileName.textContent = character.name;
-    description.innerHTML = `&emsp;&emsp; ${character.description}`;
+    if (character.description == '') {
+        description.className = 'data-unavailable';
+        description.innerHTML = `Decription not available...`;
+    } else {
+        description.innerHTML = `&emsp;&emsp; ${character.description}`;
+    }
 }
 // Function to render more details i.e. comics, series, events of a character
 function renderMoreDetails(infoList,total,infoType) {

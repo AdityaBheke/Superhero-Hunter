@@ -21,8 +21,7 @@ async function fetchFavourites(idArray) {
               }
           }
     }
-    //rendering fetched characters
-  renderList(charactersArray);
+  renderList(charactersArray);  //rendering fetched characters
 }
 
 //Initial fetching and rendering favourite characters
