@@ -7,7 +7,7 @@ body{
 
 header{ 
     color: black;
-    background: url(../assets/images/marvel-comic-books.jpg);
+    background: url(assets/images/marvel-comic-books.jpg);
     background-color: rgba(255, 255, 255, 0.7);
     background-size: cover;
     background-repeat: no-repeat;
