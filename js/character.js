@@ -14,11 +14,9 @@ async function getCharacter(id) {
         const data = result.data;
         const character = data.results[0];
         renderBasicDetails(character);
-        getMoreDetails(character.comics.collectionURI,character.comics.available,'Comics');
-        getMoreDetails(character.events.collectionURI,character.events.available,'Events');
-        getMoreDetails(character.series.collectionURI,character.series.available,'Series');
-        // getMoreDetails(character.stories.collectionURI,'Stories');
-        console.log(character);
+        await getMoreDetails(character.comics.collectionURI,character.comics.available,'Comics');
+        await getMoreDetails(character.series.collectionURI,character.series.available,'Series');
+        await getMoreDetails(character.events.collectionURI,character.events.available,'Events');
     }catch(error){
         console.log('error while fetching character ',error);
     }
@@ -30,7 +28,6 @@ async function getMoreDetails(uri,total,infoType) {
         const result = await response.json();
         const data = result.data;
         const infoList = data.results;
-        console.log(infoType,infoList);
         renderMoreDetails(infoList,total,infoType);
     } catch (error) {
         console.log('error while fetching more details', error);

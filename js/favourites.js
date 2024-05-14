@@ -15,14 +15,7 @@ async function fetchFavourites(idArray) {
                 const response = await fetch(url);
                 const result = await response.json();
                 const data = await result.data;
-                console.log("Favourite page data",data.results);
                 charactersArray = charactersArray.concat(data.results); //Concatinating fetched array of character to empty characterArray
-                const comicsUrl = `${data.results[0].comics.collectionURI}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
-                console.log("url",comicsUrl);
-                const comicresponse = await fetch(comicsUrl);
-                const comicresult = await comicresponse.json();
-                const comicdata = await comicresult.data;
-                console.log(comicdata); 
               } catch (error) {
                   console.log("Error in fetching Character by Id",error);
               }

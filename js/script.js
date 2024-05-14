@@ -31,7 +31,6 @@ async function fetchList(name){
       const response = await fetch(url);
       const result = await response.json();
       const data = await result.data;
-      console.log("Home page data",data.results);
       renderList(data.results);       //rendering the fetched data
     } catch (error) {
         console.log("Error in fetching List of characters",error);

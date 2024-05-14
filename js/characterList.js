@@ -47,7 +47,6 @@ function renderList(list) {
       favouriteCharacters = favouriteCharacters.filter((favouriteId)=>{return favouriteId != characterId});
     }
     localStorage.setItem('favourites',JSON.stringify(favouriteCharacters));
-    console.log(JSON.parse(localStorage.getItem('favourites')));
     return isFavourite(characterId);
   }
 
