@@ -8,7 +8,7 @@ const searchButton = document.getElementById('search-button');
 
 // Initial Rendering of default list
 window.onload = ()=>{
-  fetchList();
+  fetchList(searchInput.value);
 };
 // Filtering the list of superhero characters on every letter pressed
 searchInput.addEventListener('keyup',()=>{

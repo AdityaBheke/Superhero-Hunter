@@ -5,8 +5,11 @@ import {heading, favPageButton} from './navbar.js';     //importing Page heading
 const profileImage = document.getElementById('superhero-profile');
 const profileName = document.querySelector('.search-label');
 const description = document.getElementById('description');
-const detailsContainer = document.getElementById('details-container'); //Main
+const comics = document.getElementById('Comics');
+const series = document.getElementById('Series');
+const events = document.getElementById('Events');
 
+let loader = true;
 // function to get character details using Id as a parameter
 async function getCharacter(id) {
     const url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
@@ -42,15 +45,16 @@ function renderBasicDetails(character) {
     profileName.textContent = character.name;
     if (character.description == '') {
         description.className = 'data-unavailable';
-        description.innerHTML = `Decription not available...`;
+        description.innerHTML = `Decription not available`;
     } else {
+        description.className = '';
         description.innerHTML = `&emsp;&emsp; ${character.description}`;
     }
 }
 // Function to render more details i.e. comics, series, events of a character
 function renderMoreDetails(infoList,total,infoType) {
-    const infoContainer = document.createElement('div');
-    infoContainer.className = 'info-container';
+    const infoContainer = document.getElementById(infoType);
+    infoContainer.innerHTML = '';
     const infoName = document.createElement('span');
     infoName.className = 'info-type';
     infoName.textContent = `${infoType} (${total})`;
@@ -72,8 +76,6 @@ function renderMoreDetails(infoList,total,infoType) {
     }
     infoContainer.appendChild(infoName);
     infoContainer.appendChild(cardContainer);
-    detailsContainer.appendChild(infoContainer);
 }
-
 // Function call to fetch character details
 getCharacter(localStorage.getItem('characterId'));
