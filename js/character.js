@@ -5,11 +5,7 @@ import {heading, favPageButton} from './navbar.js';     //importing Page heading
 const profileImage = document.getElementById('superhero-profile');
 const profileName = document.querySelector('.search-label');
 const description = document.getElementById('description');
-const comics = document.getElementById('Comics');
-const series = document.getElementById('Series');
-const events = document.getElementById('Events');
 
-let loader = true;
 // function to get character details using Id as a parameter
 async function getCharacter(id) {
     const url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
@@ -41,8 +37,9 @@ async function getMoreDetails(uri,total,infoType) {
 }
 // Function to render basic details i.e. image, name and description of a character
 function renderBasicDetails(character) {
-    profileImage.src = character.thumbnail.path+'.'+character.thumbnail.extension;
-    profileName.textContent = character.name;
+    profileImage.src = character.thumbnail.path+'.'+character.thumbnail.extension;      // Assigning Superhero img src
+    profileName.textContent = character.name;                                           // Assigning Superhero Name 
+    // Checking if Description of Superhero is available or not
     if (character.description == '') {
         description.className = 'data-unavailable';
         description.innerHTML = `Decription not available`;
@@ -53,29 +50,29 @@ function renderBasicDetails(character) {
 }
 // Function to render more details i.e. comics, series, events of a character
 function renderMoreDetails(infoList,total,infoType) {
-    const infoContainer = document.getElementById(infoType);
+    const infoContainer = document.getElementById(infoType);    //Accessing Infocontainer for particular info (Comics/Events/Serires)
     infoContainer.innerHTML = '';
-    const infoName = document.createElement('span');
+    const infoName = document.createElement('span');            // Creating span for Info Heading i.e. Comics/ Series/ Events
     infoName.className = 'info-type';
-    infoName.textContent = `${infoType} (${total})`;
-    const cardContainer = document.createElement('div');
+    infoName.textContent = `${infoType} (${total})`;            // Assigning info heading and total no. of Comics/Events/Serires
+    const cardContainer = document.createElement('div');        // Crating div for horizontal list of cards
     cardContainer.className = 'card-container';
     for (const info of infoList) {
-        const infoCard = document.createElement('div');
+        const infoCard = document.createElement('div');         // Creating div acting as a Card
         infoCard.className = 'info-card';
-        const cardImage = document.createElement('img');
+        const cardImage = document.createElement('img');        // Image for card
         cardImage.className = 'card-thumbnail';
-        cardImage.src = info.thumbnail.path+'.'+info.thumbnail.extension;
-        const cardName = document.createElement('span');
+        cardImage.src = info.thumbnail.path+'.'+info.thumbnail.extension;   // Assigning image src
+        const cardName = document.createElement('span');        // Span for Card Name
         cardName.className = 'card-name';
-        cardName.textContent = info.title;
+        cardName.textContent = info.title;                      // Assigning card name
 
-        infoCard.appendChild(cardImage);
-        infoCard.appendChild(cardName);
-        cardContainer.appendChild(infoCard);
+        infoCard.appendChild(cardImage);                        // Appending Image in card
+        infoCard.appendChild(cardName);                         // Appending card name in card
+        cardContainer.appendChild(infoCard);                    // Appending Card in List of cards
     }
-    infoContainer.appendChild(infoName);
-    infoContainer.appendChild(cardContainer);
+    infoContainer.appendChild(infoName);                        // Appending Info heading in InfoContianer for particular Info
+    infoContainer.appendChild(cardContainer);                   // Appending Card List in info container
 }
 // Function call to fetch character details
 getCharacter(localStorage.getItem('characterId'));

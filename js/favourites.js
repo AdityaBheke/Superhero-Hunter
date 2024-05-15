@@ -1,6 +1,6 @@
 import { ts, publicKey, hash } from "./credential.js"; //importing all necessary credential from credential.js module
 import { heading, favPageButton } from "./navbar.js"; //importing Page heading and FavouriteTab button with eventListeners attached to them
-import { renderList } from "./characterList.js"; //importing renderList function from characterList.js
+import { renderList } from "./characterList.js"; //importing renderList function from characterList.js module
 
 //Favourite Page
 
@@ -9,6 +9,7 @@ async function fetchFavourites(idArray) {
   let charactersArray = [];
   //Checking if array of characterId is empty or not
   if (idArray) {
+    // Iterating through Id Array fetching data of each character
     for (const id of idArray) {
       let url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
       try {
