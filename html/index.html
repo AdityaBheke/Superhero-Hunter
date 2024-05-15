@@ -9,18 +9,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
+    <!-- Navbar -->
     <nav>
+        <!-- Website name/logo -->
         <h1 class="heading">Superhero Hunter</h1>
+        <!-- Goto Favourites Page button -->
         <button class="black-button"><i class="fa-solid fa-heart"></i><span>Favourites</span></button>
     </nav>
+    <!-- Page Header -->
    <header>
+    <!-- Message for User -->
     <span class="search-label">Begin your Superhero Hunt here, where every click brings you closer to uncovering remarkable Powers...</span>
+    <!-- Div containing Search field and search button -->
     <div class="search-box">
+        <!-- Search field -->
         <input type="search" name="name" id="search" placeholder="Search">
+        <!-- Search button -->
         <button class="black-button" id="search-button"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></button>
     </div>
    </header>
+   <!-- Main section containing list of superheroes -->
    <main id="character-list">
+    <!-- Message for user -->
     <span class="data-unavailable loading">Hold tight, superheroes are on their way...!!!</span>
    </main>
    <script type="module" src="../js/script.js"></script>

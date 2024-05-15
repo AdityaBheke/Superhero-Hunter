@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character</title>
+    <title>Superhero</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/character.css">
     <script src="https://kit.fontawesome.com/d4929b52a0.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
+    <!-- Navbar -->
     <nav>
+        <!-- Website name/logo -->
         <h1 class="heading">Superhero Hunter</h1>
+        <!-- Goto Favourites Page button -->
         <button class="black-button"><i class="fa-solid fa-heart"></i><span>Favourites</span></button>
     </nav>
+    <!-- Page Header -->
    <header>
+    <!-- Conttainer for Superhero Image and Name -->
     <div id="head-container">
+        <!-- Superhero Image -->
         <img src="../assets/images/Marvel.jpg" alt="profile-image" id="superhero-profile">
+        <!-- Superhero name -->
         <span class="search-label"></span>
     </div>
    </header>
+   <!-- Main Container -->
    <main id="details-container">
+    <!-- Superhero Description -->
     <p id="description" class="data-unavailable loading">Loading Description...</p>
+    <!-- Div for Comics List -->
     <div class="info-container" id="Comics"><span class="data-unavailable loading">Loading Comics...</span></div>
+    <!-- Div for Searies List -->
     <div class="info-container" id="Series"><span class="data-unavailable loading">Loading Series...</span></div>
+    <!-- Div for Events List -->
     <div class="info-container" id="Events"><span class="data-unavailable loading">Loading Events...</span></div>
    </main>
    <script type="module" src="../js/character.js"></script>
