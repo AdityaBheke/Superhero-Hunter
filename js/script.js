@@ -22,17 +22,17 @@ searchButton.addEventListener("click", () => {
 // Fetching list of characters by accepting name as parameter
 async function fetchList(name) {
   // If name or letters are provided then fetch only those characters whose name starts with given letters
-  let url = `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${name}&ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+  let url = `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${name}&limit=99&ts=${ts}&apikey=${publicKey}&hash=${hash}`;
   if (!name) {
     // If name is not provided then fetch all characters
-    url = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+    url = `https://gateway.marvel.com:443/v1/public/characters?limit=99&ts=${ts}&apikey=${publicKey}&hash=${hash}`;
   }
   try {
     const response = await fetch(url);
     const result = await response.json();
     const data = await result.data;
+    console.log(result);
     renderList(data.results, data.total); //rendering the fetched data
-    console.log(data);
   } catch (error) {
     console.log("Error in fetching List of characters", error);
   }

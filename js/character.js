@@ -28,7 +28,7 @@ async function getCharacter(id) {
 }
 // Function to get more details i.e. comics, series, events of a character using URI and available infos as parameter
 async function getMoreDetails(uri,total,infoType) {
-    const url = `${uri}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+    const url = `${uri}?limit=50&ts=${ts}&apikey=${publicKey}&hash=${hash}`;
     try {
         const response = await fetch(url);
         const result = await response.json();
