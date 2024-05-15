@@ -1,11 +1,10 @@
+/* Updating css properties of header for Favourites page */
 header{
     height: 35vh;
 }
+/* Updating css properties of Page Heading for Favourites page  */
 .search-label{
     font-size: 4rem;
     font-weight: 900;
-}
-main{
-    height: auto;
 }
 

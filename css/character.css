@@ -1,8 +1,9 @@
-
+/* Css for header section */
 header{
     height: 25vw;
     margin-bottom: 100px;
 }
+/* Header container contains Character image and Name */
 #head-container{
     width: 90%;
     padding: 50px;
@@ -12,19 +13,21 @@ header{
     align-items: center;
     top: 15vh;
 }
+/* SUperhero profile */
 #superhero-profile{
     width: 30%;
     aspect-ratio: 1;
     border-radius: 10px;
     border: 1px solid black;
 }
-
+/* Updating css of already defined class for Character name */
 .search-label{
     font-size: 4rem;
     font-weight: 900;
     flex-grow: 1;
 }
 
+/* Updating css of already defined Main section for Superhero page */
 main{
     color: black;
     width: 65%;
@@ -34,21 +37,25 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
+/* Superhero Description */
 #description{
     text-align: justify;
     font-size: 1.5rem;
 }
+/* Info container containing Info heading and Cards */
 .info-container{
     font-family: monospace;
     width: 100%;
     height: auto;
 }
+/* info heading i.e. Comics, Series, Events */
 .info-type{
     padding: 5px;
     font-size: 2rem;
     font-weight: 600;
     display: block;
 }
+/* Container for list of Cards */
 .card-container{
     width: 100%;
     display: flex;
@@ -58,8 +65,8 @@ main{
     overflow-x: scroll;
     scrollbar-width: thin;
 }
+/* Single Info Card */
 .info-card{
-    /* background-color: bisque; */
     padding: 10px;
     margin-right: 20px;
     width: 200px;
@@ -68,11 +75,13 @@ main{
     display: flex;
     flex-direction: column;
 }
+/* Card Image */
 .card-thumbnail{
     width: 100%;
     aspect-ratio: 0.75;
     border: 1px solid black;
 }
+/* Card Name */
 .card-name{
     font-size: 1rem;
     padding: 5px;
@@ -80,7 +89,7 @@ main{
     text-align: center;
 }
 
-
+/* Changing css properties for screen size less than 920px */
 
 @media screen and (max-width: 920px) {
     header{
@@ -106,6 +115,8 @@ main{
         width: 80%;
     }
 }
+
+/* Changing css properties for screen size less than 600px */
 @media screen and (max-width: 600px) {
     header{
         height: 40vw;

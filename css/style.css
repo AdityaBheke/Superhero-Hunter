@@ -1,10 +1,12 @@
+/* Common css for all pages */
+/* Css for body */
 body{
     background-color: white;
     color: white;
     margin: 0;
     position: relative;
 }
-
+/* Header section */
 header{ 
     color: black;
     background: url(../assets/images/marvel-comic-books.jpg);
@@ -19,6 +21,7 @@ header{
     justify-content: space-evenly;
     align-items: center;
 }
+/* Nav bar */
 nav{
     background-color: white;
     display: flex;
@@ -32,6 +35,7 @@ nav{
     z-index: 1;
     box-shadow: 0px -5px 35px rgb(0, 0, 0);
 }
+/* App name/logo */
 .heading{
     color: black;
     margin: 10px;
@@ -40,6 +44,7 @@ nav{
     text-shadow: 3px 3px 15px rgb(72, 72, 72);
     cursor: pointer;
 }
+/* Favourite button and search button */
 .black-button{
     height: 40px;
     width: 140px;
@@ -59,6 +64,7 @@ nav{
     color: white;
     background-color: rgb(107, 107, 107);
 }
+/* message above search field*/
 .search-label{
     font-family: monospace;
     font-size: 2rem;
@@ -67,18 +73,17 @@ nav{
     text-shadow: 2px 2px 4px rgb(255, 255, 255);
     width: 60%;
 }
+/* Search box containing search field and search button */
 .search-box{
-    /* background-color: aquamarine; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 60%;
     height: 50px;
 }
+/* Search field */
 #search{
-    /* width: 83%; */
     background-color: transparent;
-    /* background-color: bisque; */
     border-top: none;
     border-bottom: 3px solid rgb(0, 0, 0);
     border-left: none;
@@ -93,7 +98,7 @@ nav{
 #search:focus{
     outline: none;
 }
-
+/* Main section containing list of characters */
 main{
     margin-top: 30px;
     padding: 20px;
@@ -102,6 +107,7 @@ main{
     justify-content: space-evenly;
     position: relative;
 }
+/* Single superhero card */
 .superhero-card{
     background-color: rgba(0, 0, 0, 1);
     height: 150px;
@@ -116,6 +122,7 @@ main{
     cursor: default;
     position: relative;
 }
+/* Favourite icon on card */
 .favourite-button{
     position: absolute;
     top: 15px;
@@ -136,12 +143,14 @@ main{
 .superhero-card:hover .card-name{
     scale: 1.1;
 }
+/* Card image */
 .card-profile{
     height: 100%;
     aspect-ratio: 1;
     border-radius: 8px;
     color: white;
 }
+/* Card name */
 .card-name{
     flex-grow: 1;
     text-align: center;
@@ -149,7 +158,7 @@ main{
     font-size: 1.5rem;
     transition: all 0.2s ease-in;
 }
-
+/* Data unavailable message */
 .data-unavailable{
     display: block;
     margin-left: auto;
@@ -163,11 +172,13 @@ main{
     color: rgba(162, 162, 162, 0.736);
     font-size: 2rem;
 }
+/* Data loading message */
 .loading{
     animation-name: blink;
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
+/* Animation for Data loading message */
 @keyframes blink {
     0%{
         color: rgba(162, 162, 162, 0.736);
@@ -179,6 +190,8 @@ main{
         color: rgba(162, 162, 162, 0.736);
     }
 }
+
+/* Changing css properties for screen size less than 920px */
 @media screen and (max-width: 920px) {
     .black-button span{
         visibility: hidden;
@@ -193,6 +206,7 @@ main{
         margin: 10px;
     }
 }
+/* Changing css properties for screen size less than 600px */
 @media screen and (max-width: 600px) {
     .superhero-card{
         flex-grow: 1;
