@@ -24,7 +24,7 @@ async function getCharacter(id) {
 }
 // Function to get more details i.e. comics, series, events of a character using URI and available infos as parameter
 async function getMoreDetails(uri,total,infoType) {
-    const url = `${uri}?limit=50&ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+    let url = (`${uri}?limit=50&ts=${ts}&apikey=${publicKey}&hash=${hash}`).replace("http:", "https:");
     try {
         const response = await fetch(url);
         const result = await response.json();
@@ -37,7 +37,7 @@ async function getMoreDetails(uri,total,infoType) {
 }
 // Function to render basic details i.e. image, name and description of a character
 function renderBasicDetails(character) {
-    profileImage.src = character.thumbnail.path+'.'+character.thumbnail.extension;      // Assigning Superhero img src
+    profileImage.src = (character.thumbnail.path).replace("http:", "https:")+'.'+character.thumbnail.extension;      // Assigning Superhero img src
     profileName.textContent = character.name;                                           // Assigning Superhero Name 
     // Checking if Description of Superhero is available or not
     if (character.description == '') {
@@ -62,7 +62,7 @@ function renderMoreDetails(infoList,total,infoType) {
         infoCard.className = 'info-card';
         const cardImage = document.createElement('img');        // Image for card
         cardImage.className = 'card-thumbnail';
-        cardImage.src = info.thumbnail.path+'.'+info.thumbnail.extension;   // Assigning image src
+        cardImage.src = (info.thumbnail.path).replace("http:", "https:")+'.'+info.thumbnail.extension;   // Assigning image src
         const cardName = document.createElement('span');        // Span for Card Name
         cardName.className = 'card-name';
         cardName.textContent = info.title;                      // Assigning card name

@@ -28,7 +28,7 @@ function renderList(list, total) {
     characterCard.className = "superhero-card";
     const characterProfile = document.createElement("img");             // Creating img element for Profile image 
     characterProfile.className = "card-profile";
-    characterProfile.src = character.thumbnail.path + "." + character.thumbnail.extension;   // Assigning img src
+    characterProfile.src = (character.thumbnail.path).replace("http:", "https:") + "." + character.thumbnail.extension;   // Assigning img src
     const characterName = document.createElement("span");               // Creating span for character name
     characterName.className = "card-name";
     characterName.textContent = character.name;                         // Assigning name to span
