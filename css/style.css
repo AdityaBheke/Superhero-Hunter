@@ -80,9 +80,12 @@ nav{
     align-items: center;
     width: 60%;
     height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 /* Search field */
 #search{
+    width: 80%;
     background-color: transparent;
     border-top: none;
     border-bottom: 3px solid rgb(0, 0, 0);
@@ -210,5 +213,8 @@ main{
 @media screen and (max-width: 600px) {
     .superhero-card{
         flex-grow: 1;
+    }
+    .search-box{
+        width: 100%;
     }
 }
