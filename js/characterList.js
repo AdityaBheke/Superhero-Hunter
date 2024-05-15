@@ -9,12 +9,15 @@ if (JSON.parse(localStorage.getItem('favourites'))) {
     favouriteCharacters = JSON.parse(localStorage.getItem('favourites'));
 }
 // Creating superhero character card and rendering it
-function renderList(list) {
+function renderList(list,total) {
     listContainer.innerHTML = '';
     if (!list.length) {
       const dataUnavailable = document.createElement('span');
       dataUnavailable.className = 'data-unavailable';
       dataUnavailable.textContent = 'Your favorites list is waiting for its first Superhero!';
+      if (total == 0) {
+        dataUnavailable.textContent = 'Oops, no match! Search again.';
+      }
       listContainer.appendChild(dataUnavailable);
     }
     for (const character of list) {
