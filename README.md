@@ -1,8 +1,8 @@
 # Superhero-Hunter
-
 - This app is made using only Html, Css and Javascript.
 - Crypto.js(MD5) is used via CDN link to generate 'Hash'. Which is used in API calling.
 
+### [Live Demo](https://adityabheke.github.io/Superhero-Hunter/) 
 ### Home Page
 - Home page contains navbar. Inside navbar there is App Name/Logo (i.e. Super Hunter). And on the right side of navbar there is one button which is used to navigate to 'Favourites' page.
 - In Header section there is one search bar and search button.
